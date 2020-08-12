@@ -20,3 +20,10 @@ kubectl get nodes
 #aks-nodepool1-19289120-vmss000001   Ready    agent   5m26s   v1.16.13
 #aks-nodepool1-19289120-vmss000002   Ready    agent   5m32s   v1.16.13
 
+kubectl create namespace web
+kubectl create namespace api
+
+kubectl apply -f tripinsights-poi.yaml  
+
+kubectl get pods -n api
+

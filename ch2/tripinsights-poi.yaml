@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tripinsights-poi
+  name: poi
+  namespace: api
 spec:
   selector:
     matchLabels:
-      app: tripinsights-poi
+      app: poi
   template:
     metadata:
       labels:
-        app: tripinsights-poi
+        app: poi
     spec:
       containers:
-      - name: tripinsights-poi
-        image: tripinsights-poi:1.0
+      - name: poi
+        image: registrycum5425.azurecr.io/tripinsights/poi:1.0
         resources:
           limits:
             memory: "128Mi"
@@ -25,5 +26,5 @@ spec:
             value: sa
           - name: SQL_PASSWORD
             value: changeme
-          - name: WEB_SERVER_BASE_URI
+          - name: SQL_SERVER
             value: sqlservercum5425.database.windows.net
