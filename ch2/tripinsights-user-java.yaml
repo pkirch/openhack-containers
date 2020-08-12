@@ -28,3 +28,15 @@ spec:
             value: changeme
           - name: SQL_SERVER
             value: sqlservercum5425.database.windows.net
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: user-java-service
+spec:
+  selector:
+    app: user-java
+  ports:
+    - port: 80
