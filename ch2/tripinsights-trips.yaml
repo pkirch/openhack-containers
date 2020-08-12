@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trips
+  namespace: api
+spec:
+  selector:
+    matchLabels:
+      app: trips
+  template:
+    metadata:
+      labels:
+        app: trips
+    spec:
+      containers:
+      - name: trips
+        image: registrycum5425.azurecr.io/tripinsights/trips:1.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        env:
+          - name: SQL_USER
+            value: sa
+          - name: SQL_PASSWORD
+            value: changeme
+          - name: SQL_SERVER
+            value: sqlservercum5425.database.windows.net
