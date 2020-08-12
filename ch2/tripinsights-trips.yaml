@@ -1,3 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: trips-svc
+spec:
+  selector:
+    app: trips
+  ports:
+    - port: 80 # Default port for image
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
