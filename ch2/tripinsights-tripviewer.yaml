@@ -34,6 +34,6 @@ spec:
         - containerPort: 80
         env:
           - name: USERPROFILE_API_ENDPOINT
-            value: http://userprofile-svc:80
+            value: http://userprofile-svc.api:80
           - name: TRIPS_API_ENDPOINT
-            value: http://trips-svc:80
+            value: http://trips-svc.api:80
