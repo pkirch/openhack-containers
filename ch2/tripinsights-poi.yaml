@@ -24,6 +24,6 @@ spec:
           - name: SQL_USER
             value: sa
           - name: SQL_PASSWORD
-            value: ahX3ezie9Ahngual
+            value: changeme
           - name: WEB_SERVER_BASE_URI
             value: sqlservercum5425.database.windows.net
