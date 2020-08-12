@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: tripviewer
-  namespace: api
+  namespace: web
 spec:
   selector:
     matchLabels:
