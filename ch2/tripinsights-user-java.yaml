@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-java
+  namespace: api
+spec:
+  selector:
+    matchLabels:
+      app: user-java
+  template:
+    metadata:
+      labels:
+        app: user-java
+    spec:
+      containers:
+      - name: user-java
+        image: registrycum5425.azurecr.io/tripinsights/user-java:1.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        env:
+          - name: SQL_USER
+            value: sa
+          - name: SQL_PASSWORD
+            value: changeme
+          - name: SQL_SERVER
+            value: sqlservercum5425.database.windows.net
