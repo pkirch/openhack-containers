@@ -1,3 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: tripviewer-svc
+  namespace: web
+spec:
+  selector:
+    app: tripviewer
+  ports:
+    - port: 80
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,9 +33,7 @@ spec:
         ports:
         - containerPort: 80
         env:
-          - name: SQL_USER
-            value: sa
-          - name: SQL_PASSWORD
-            value: changeme
-          - name: SQL_SERVER
-            value: sqlservercum5425.database.windows.net
+          - name: USERPROFILE_API_ENDPOINT
+            value: http://userprofile-svc:80
+          - name: TRIPS_API_ENDPOINT
+            value: http://trips-svc:80

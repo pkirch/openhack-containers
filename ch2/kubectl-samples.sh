@@ -56,3 +56,5 @@ root@codespaces_f9f2a3:~/workspace/openhack-containers/ch2# az acr repository li
   "wcfservice"
 ]
 
+k port-forward service/tripviewer-svc :80 -n web
+curl -vkL http://localhost:44053/

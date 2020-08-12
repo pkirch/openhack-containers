@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: userprofile-svc
+  namespace: api
 spec:
   selector:
     app: userprofile
@@ -31,10 +32,6 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 80
-        env:
-          - name: SQL_USER
-            value: sa
-          - name: SQL_PASSWORD
-            value: changeme
-          - name: SQL_SERVER
-            value: sqlservercum5425.database.windows.net
+        envFrom:
+        - secretRef:
+            name: sql
