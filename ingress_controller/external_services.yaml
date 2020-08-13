@@ -1,0 +1,44 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: poi-svc-ext
+  namespace: ingress-basic
+spec:
+  type: ExternalName
+  externalName: poi-svc.api
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: trips-svc-ext
+  namespace: ingress-basic
+spec:
+  type: ExternalName
+  externalName: trips-svc.api
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: user-java-svc-ext
+  namespace: ingress-basic
+spec:
+  type: ExternalName
+  externalName: user-java-svc.api
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: userprofile-svc-ext
+  namespace: ingress-basic
+spec:
+  type: ExternalName
+  externalName: userprofile-svc.api
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: tripviewer-svc-ext
+  namespace: ingress-basic
+spec:
+  type: ExternalName
+  externalName: tripviewer-svc.web

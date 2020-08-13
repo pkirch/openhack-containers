@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: world-ingress
+  namespace: ingress-basic
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: tripviewer-svc-ext
+          servicePort: 80
+        path: /
+      - backend:
+          serviceName: poi-svc-ext
+          servicePort: 80
+        path: /api/poi/
+      - backend:
+          serviceName: trips-svc-ext
+          servicePort: 80
+        path: /api/trips/
+      - backend:
+          serviceName: user-java-svc-ext
+          servicePort: 80
+        path: /api/user-java/
+      - backend:
+          serviceName: userprofile-svc-ext
+          servicePort: 80
+        path: /api/user/
