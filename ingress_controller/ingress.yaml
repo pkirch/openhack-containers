@@ -30,3 +30,7 @@ spec:
           serviceName: userprofile-svc-ext
           servicePort: 80
         path: /api/user/
+      - backend:
+          serviceName: nginx-ingress-controller-metrics
+          servicePort: 9913
+        path: /metrics
